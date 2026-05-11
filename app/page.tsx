@@ -311,20 +311,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== MORE PRODUCTS ===== */}
-      <section className="container py-20 lg:py-28">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 lg:mb-16">
-          <div>
-            <div className="eyebrow text-brass mb-3">
-              Curated by Shannon
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05]">
-              This week&apos;s standouts.
-            </h2>
-          </div>
+      {/* ===== CURATED BY SHANNON ===== */}
+      <section
+        aria-labelledby="shannon-heading"
+        className="container py-20 lg:py-28"
+      >
+        {/* Pull-quote — Shannon's voice as the section header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <div className="eyebrow text-brass mb-7">Curated by Shannon</div>
+          <blockquote>
+            <p className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-light italic text-ivory leading-[1.25] text-balance mb-9 text-pretty">
+              &ldquo;My mother taught me the best find isn&apos;t on the wall —
+              it&apos;s the one you almost missed. I built this for the women
+              who learned it the same way.&rdquo;
+            </p>
+            <footer className="flex flex-col items-center gap-3">
+              <span className="font-serif italic text-2xl md:text-3xl text-brass">
+                Shannon McComb
+              </span>
+              <span
+                className="h-px w-10 bg-brass/50"
+                aria-hidden="true"
+              />
+              <cite className="not-italic eyebrow text-ivory/55 text-[10px]">
+                Founder · Lucky Finds, Rockville Centre
+              </cite>
+            </footer>
+          </blockquote>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+        {/* Grid header + link */}
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-5 mb-10 lg:mb-14 pt-10 border-t border-ivory/8">
+          <h2
+            id="shannon-heading"
+            className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-ivory leading-[1.05]"
+          >
+            Her picks this week.
+          </h2>
+          <Link href="#" className="btn-ghost group">
+            <span>View all standouts</span>
+            <ArrowRight
+              className="h-4 w-4 group-hover:translate-x-1 transition-transform"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 md:gap-x-6 gap-y-12">
           {products.slice(4, 8).map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
