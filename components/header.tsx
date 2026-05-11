@@ -11,7 +11,6 @@ const navLinks = [
   { label: "Shoes", href: "/#shoes" },
   { label: "Jewelry", href: "/#jewelry" },
   { label: "Accessories", href: "/#accessories" },
-  { label: "Sale", href: "/#sale" },
 ];
 
 export function Header() {

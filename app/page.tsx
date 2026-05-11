@@ -69,13 +69,9 @@ export default function HomePage() {
                 piece authenticated. Every find one-of-one.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-2">
+              <div className="pt-2">
                 <Link href="#new" className="btn-primary">
                   Shop New Arrivals
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-                <Link href="#consign" className="btn-ghost">
-                  <span>Consign with us</span>
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -290,11 +286,11 @@ export default function HomePage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 bg-brass text-charcoal px-6 py-5 hidden lg:block">
-                <div className="font-serif text-3xl leading-none">
+              <div className="absolute bottom-3 right-3 md:-bottom-5 md:-right-5 lg:-bottom-6 lg:-right-6 bg-brass text-charcoal px-4 py-3 md:px-6 md:py-5">
+                <div className="font-serif text-xl md:text-2xl lg:text-3xl leading-none">
                   Est. 2011
                 </div>
-                <div className="text-xs uppercase tracking-[0.25em] mt-2">
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.25em] mt-1.5 md:mt-2">
                   Rockville Centre
                 </div>
               </div>
@@ -305,7 +301,7 @@ export default function HomePage() {
                 <div className="eyebrow text-brass mb-4">Our Story</div>
                 <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] mb-6">
                   A treasure hunt with{" "}
-                  <span className="italic text-brass">unbeatable</span> standards.
+                  <span className="italic text-brass">uncompromising</span> standards.
                 </h2>
               </div>
               <p className="text-lg text-ivory/75 leading-relaxed">
@@ -322,8 +318,8 @@ export default function HomePage() {
                 rare.
               </p>
               <div className="pt-4">
-                <Link href="#about" className="btn-outline">
-                  Read Our Story
+                <Link href="#visit" className="btn-outline">
+                  Visit the Boutique
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -410,13 +406,12 @@ export default function HomePage() {
                 We offer 50% on luxury designer pieces. By-appointment intake,
                 transparent process, payment by store credit or check.
               </p>
-              <div className="flex flex-wrap items-center gap-4">
-                <Link href="#" className="btn-primary">
+              <div className="pt-2">
+                <Link
+                  href="mailto:luckyfindsboutique@gmail.com?subject=Consignment%20appointment"
+                  className="btn-primary"
+                >
                   Book an Appointment
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-                <Link href="#" className="btn-ghost">
-                  <span>How it works</span>
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>

@@ -39,9 +39,9 @@ export function TrustBand() {
             id="trust-heading"
             className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.1] text-balance text-ivory"
           >
-            Buy with the confidence of a flagship.
+            Authenticated by an independent house.
             <br className="hidden sm:block" />
-            <span className="italic text-brass"> Hunt with the joy of a find.</span>
+            <span className="italic text-brass"> Guaranteed by ours.</span>
           </h2>
         </div>
 

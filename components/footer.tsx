@@ -11,7 +11,6 @@ const footerColumns = [
       "Shoes",
       "Jewelry",
       "Accessories",
-      "Sale",
     ],
   },
   {
