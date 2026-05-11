@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { TrustBand } from "@/components/trust-band";
 import { ProductCard } from "@/components/product-card";
-import { Badge } from "@/components/ui/badge";
 import { products, featuredBrands } from "@/lib/products";
 
 const categories = [
@@ -47,32 +46,31 @@ export default function HomePage() {
 
       {/* ===== HERO ===== */}
       <section className="relative bg-emerald-deep overflow-hidden">
-        <div className="container pt-12 lg:pt-20 pb-16 lg:pb-24">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="container pt-10 md:pt-14 lg:pt-20 pb-14 lg:pb-24">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
             {/* Left: editorial copy */}
-            <div className="lg:col-span-5 space-y-8 animate-fade-in">
+            <div className="lg:col-span-5 space-y-8 animate-fade-in order-2 lg:order-1">
               <div className="flex items-center gap-3">
-                <div className="h-px w-12 bg-brass" />
+                <div className="h-px w-10 bg-brass" aria-hidden="true" />
                 <span className="eyebrow text-brass">
-                  New In · This Week
+                  New This Week
                 </span>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[0.95] text-balance text-ivory">
+              <h1 className="font-serif text-[42px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] font-light leading-[0.95] text-balance text-ivory">
                 The thrill
                 <br />
                 of the <span className="italic text-brass">find</span>,
                 <br />
-                <span className="text-ivory/70">curated.</span>
+                <span className="text-ivory/65">curated.</span>
               </h1>
 
-              <p className="text-lg text-ivory/70 leading-relaxed max-w-md text-pretty">
+              <p className="text-base md:text-lg text-ivory/70 leading-relaxed max-w-md text-pretty">
                 Designer consignment with the standards of a flagship. Every
-                piece authenticated, every detail considered, every find
-                genuinely one-of-one.
+                piece authenticated. Every find one-of-one.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-2">
                 <Link href="#new" className="btn-primary">
                   Shop New Arrivals
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -84,8 +82,11 @@ export default function HomePage() {
               </div>
 
               {/* Social proof */}
-              <div className="flex items-center gap-6 pt-6 border-t border-ivory/10">
-                <div className="flex items-center gap-1.5" aria-label="5 out of 5 stars">
+              <div className="flex items-center gap-5 pt-6 border-t border-ivory/10">
+                <div
+                  className="flex items-center gap-1"
+                  aria-label="Customer rating: 5 out of 5 stars"
+                >
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
@@ -96,73 +97,79 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <span className="font-medium text-ivory">
-                    96% recommend
-                  </span>
-                  <span className="text-ivory/55 ml-2">
+                  <span className="font-medium text-ivory">96% recommend</span>
+                  <span className="text-ivory/50 ml-2 hidden sm:inline">
                     · Trusted since 2011
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right: hero image montage */}
-            <div className="lg:col-span-7 relative h-[500px] md:h-[600px] lg:h-[680px]">
-              {/* Main image */}
-              <div className="absolute top-0 right-0 w-[72%] h-[85%] overflow-hidden">
+            {/* Right: single editorial image with integrated placard */}
+            <div className="lg:col-span-7 relative order-1 lg:order-2">
+              <figure className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] xl:aspect-[5/6] overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=1400&q=80&auto=format&fit=crop"
-                  alt="Featured luxury handbag"
+                  alt="A pre-loved Chanel Classic Flap handbag in caviar leather"
                   fill
                   priority
                   className="object-cover"
-                  sizes="(max-width: 1024px) 70vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
                 />
-                <div className="absolute inset-0 bg-emerald-deep/15" />
-              </div>
-
-              {/* Secondary inset image */}
-              <div className="absolute bottom-0 left-0 w-[45%] h-[55%] overflow-hidden border-[12px] border-emerald-deep">
-                <Image
-                  src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&q=80&auto=format&fit=crop"
-                  alt="Featured shoes"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 40vw, 25vw"
+                {/* Soft vignette so the placard caption always reads */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-emerald-deep/55 via-emerald-deep/0 to-emerald-deep/0 pointer-events-none"
+                  aria-hidden="true"
                 />
-              </div>
 
-              {/* Editorial tag — ivory island floating on dark */}
-              <div className="absolute top-8 left-4 lg:left-8 bg-ivory px-5 py-4 max-w-[200px] shadow-2xl shadow-emerald-deep/40">
-                <div className="eyebrow text-brass-dark mb-1.5">
-                  Editor&apos;s Find
-                </div>
-                <div className="font-serif text-base text-emerald-deep leading-tight">
-                  Chanel Classic Flap in caviar — just walked in.
-                </div>
-              </div>
-
-              {/* Authenticated pill */}
-              <div className="absolute bottom-6 right-6 bg-brass text-charcoal px-5 py-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em]">
-                <Sparkles className="h-3.5 w-3.5 text-emerald-deep" aria-hidden="true" />
-                <span>Authenticated</span>
-              </div>
+                {/* Museum-placard caption — integrated, not floating */}
+                <figcaption className="absolute left-0 right-0 bottom-0 px-5 py-5 md:px-7 md:py-6 flex items-end justify-between gap-4">
+                  <div className="max-w-[80%]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="h-px w-6 bg-brass" aria-hidden="true" />
+                      <span className="eyebrow text-brass text-[10px]">
+                        Editor&apos;s Find
+                      </span>
+                    </div>
+                    <p className="font-serif text-lg md:text-xl text-ivory leading-snug text-balance">
+                      Chanel Classic Flap in caviar — just walked in.
+                    </p>
+                  </div>
+                  <Link
+                    href="/product/chanel-classic-flap-medium"
+                    className="hidden sm:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] font-medium text-ivory hover:text-brass transition-colors flex-shrink-0 pb-0.5"
+                  >
+                    <span>View</span>
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Link>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Bottom brand marquee */}
-        <div className="border-y border-ivory/10 bg-emerald overflow-hidden">
-          <div className="flex animate-marquee whitespace-nowrap py-5" aria-hidden="true">
-            {[...featuredBrands, ...featuredBrands].map((brand, i) => (
-              <span
-                key={i}
-                className="font-serif text-xl md:text-2xl text-ivory/55 mx-10"
-              >
-                {brand}
-                <span className="ml-10 text-brass/70">·</span>
-              </span>
-            ))}
+      {/* ===== AUTHENTICATED HOUSES — static brand strip, no marquee ===== */}
+      <section
+        aria-label="Designer houses we authenticate"
+        className="border-y border-ivory/10 bg-emerald-deep"
+      >
+        <div className="container py-7 md:py-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <span className="eyebrow text-brass text-[10px] md:text-[11px] flex-shrink-0">
+              Authenticated Houses
+            </span>
+            <div className="h-px w-8 bg-ivory/15 hidden md:block" aria-hidden="true" />
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:gap-x-7">
+              {featuredBrands.slice(0, 8).map((brand) => (
+                <li
+                  key={brand}
+                  className="font-serif text-base md:text-lg text-ivory/60 tracking-wide"
+                >
+                  {brand}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
