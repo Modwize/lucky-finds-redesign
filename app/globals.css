@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-cormorant: "Cormorant Garamond", Georgia, serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    @apply bg-emerald text-ivory;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #EDE5D5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1F3A2E;
+  }
+}
+
+@layer components {
+  .display-text {
+    @apply font-serif font-light tracking-tight;
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.25em] font-medium;
+  }
+
+  .hairline {
+    @apply h-px bg-charcoal/15;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald text-ivory text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-emerald-deep;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-emerald text-emerald text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-emerald hover:text-ivory;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] font-medium text-emerald hover:text-brass-dark transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
