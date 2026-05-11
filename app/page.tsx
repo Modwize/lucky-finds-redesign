@@ -11,14 +11,15 @@ const categories = [
   {
     name: "Handbags",
     count: 247,
+    subtitle: "Iconic flaps, totes, evening clutches",
     image:
       "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1200&q=80&auto=format&fit=crop",
     href: "#handbags",
-    featured: true,
   },
   {
     name: "Shoes",
     count: 184,
+    subtitle: "Heels, flats, red soles",
     image:
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&q=80&auto=format&fit=crop",
     href: "#shoes",
@@ -26,6 +27,7 @@ const categories = [
   {
     name: "Apparel",
     count: 312,
+    subtitle: "Outerwear, knits, dresses",
     image:
       "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=900&q=80&auto=format&fit=crop",
     href: "#apparel",
@@ -33,6 +35,7 @@ const categories = [
   {
     name: "Jewelry",
     count: 96,
+    subtitle: "Fine, costume, vintage",
     image:
       "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=900&q=80&auto=format&fit=crop",
     href: "#jewelry",
@@ -206,55 +209,77 @@ export default function HomePage() {
       <TrustBand />
 
       {/* ===== SHOP BY CATEGORY ===== */}
-      <section className="container py-20 lg:py-28">
-        <div className="text-center mb-14">
-          <div className="eyebrow text-brass mb-3">Shop the Boutique</div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] max-w-2xl mx-auto text-balance">
-            Browse by category.
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-          {categories.map((cat, i) => (
-            <Link
-              key={cat.name}
-              href={cat.href}
-              className={`group relative overflow-hidden ${
-                cat.featured ? "lg:col-span-2 lg:row-span-2" : ""
-              } ${
-                cat.featured
-                  ? "aspect-square lg:aspect-auto"
-                  : "aspect-[3/4]"
-              }`}
+      <section
+        aria-labelledby="categories-heading"
+        className="container py-20 lg:py-28"
+      >
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16">
+          <div className="max-w-xl">
+            <div className="eyebrow text-brass mb-3">Shop the Boutique</div>
+            <h2
+              id="categories-heading"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] text-balance"
             >
-              <Image
-                src={cat.image}
-                alt={cat.name}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-deep/70 via-emerald-deep/10 to-transparent" />
-
-              <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 text-ivory">
-                <div className="text-xs uppercase tracking-[0.25em] text-brass-light mb-1.5">
-                  {cat.count} pieces
-                </div>
-                <h3
-                  className={`font-serif font-light leading-none ${
-                    cat.featured ? "text-4xl lg:text-6xl" : "text-2xl lg:text-3xl"
-                  }`}
-                >
-                  {cat.name}
-                </h3>
-                <div className="flex items-center gap-2 mt-4 text-xs uppercase tracking-[0.25em]">
-                  <span>Shop</span>
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-          ))}
+              Browse by category.
+            </h2>
+          </div>
+          <p className="text-ivory/60 text-sm md:text-base max-w-xs">
+            Every piece authenticated, every category curated.{" "}
+            <span className="text-ivory">{
+              categories.reduce((sum, c) => sum + c.count, 0).toLocaleString()
+            }</span>{" "}
+            currently on the floor.
+          </p>
         </div>
+
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+          {categories.map((cat) => (
+            <li key={cat.name}>
+              <Link
+                href={cat.href}
+                className="group relative block aspect-[4/5] overflow-hidden focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-4"
+                aria-label={`${cat.name} category, ${cat.count} pieces`}
+              >
+                <Image
+                  src={cat.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+                {/* Two-stop gradient: dark anchor at bottom for legibility, subtle wash up top */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-emerald-deep/85 via-emerald-deep/15 to-emerald-deep/5"
+                  aria-hidden="true"
+                />
+                {/* Hover lift: thin brass border emerges */}
+                <div
+                  className="absolute inset-0 border border-brass/0 group-hover:border-brass/60 transition-colors duration-500"
+                  aria-hidden="true"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 lg:p-7 text-ivory">
+                  <div className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-brass mb-2">
+                    {cat.count} pieces
+                  </div>
+                  <h3 className="font-serif font-light leading-[1.05] text-2xl md:text-3xl lg:text-[34px] mb-2">
+                    {cat.name}
+                  </h3>
+                  <p className="hidden md:block text-xs text-ivory/65 leading-snug mb-4 max-w-[200px]">
+                    {cat.subtitle}
+                  </p>
+                  <div className="flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.25em] text-ivory/80 group-hover:text-brass transition-colors">
+                    <span>Shop {cat.name}</span>
+                    <ArrowRight
+                      className="h-3 w-3 group-hover:translate-x-1 transition-transform"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* ===== EDITORIAL STORY ===== */}
