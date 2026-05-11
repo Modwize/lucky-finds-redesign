@@ -5,7 +5,6 @@ export type Product = {
   brand: string;
   category: string;
   price: number;
-  retailPrice?: number;
   condition: "New with Tags" | "Excellent" | "Very Good" | "Good";
   conditionScore: number;
   image: string;
@@ -24,7 +23,6 @@ export const products: Product[] = [
     brand: "Chanel",
     category: "Handbags",
     price: 5800,
-    retailPrice: 10800,
     condition: "Excellent",
     conditionScore: 9,
     image:
@@ -41,7 +39,6 @@ export const products: Product[] = [
     brand: "Louis Vuitton",
     category: "Handbags",
     price: 1450,
-    retailPrice: 2030,
     condition: "Very Good",
     conditionScore: 8,
     image:
@@ -57,7 +54,6 @@ export const products: Product[] = [
     brand: "Christian Louboutin",
     category: "Shoes",
     price: 495,
-    retailPrice: 795,
     condition: "Excellent",
     conditionScore: 9,
     image:
@@ -74,7 +70,6 @@ export const products: Product[] = [
     brand: "Hermès",
     category: "Accessories",
     price: 165,
-    retailPrice: 215,
     condition: "New with Tags",
     conditionScore: 10,
     image:
@@ -90,7 +85,6 @@ export const products: Product[] = [
     brand: "Gucci",
     category: "Handbags",
     price: 1180,
-    retailPrice: 2380,
     condition: "Very Good",
     conditionScore: 8,
     image:
@@ -106,7 +100,6 @@ export const products: Product[] = [
     brand: "Prada",
     category: "Handbags",
     price: 1640,
-    retailPrice: 3300,
     condition: "Excellent",
     conditionScore: 9,
     image:
@@ -123,7 +116,6 @@ export const products: Product[] = [
     brand: "Tory Burch",
     category: "Apparel",
     price: 385,
-    retailPrice: 998,
     condition: "Excellent",
     conditionScore: 9,
     image:
@@ -138,7 +130,6 @@ export const products: Product[] = [
     brand: "Kate Spade",
     category: "Jewelry",
     price: 78,
-    retailPrice: 148,
     condition: "New with Tags",
     conditionScore: 10,
     image:

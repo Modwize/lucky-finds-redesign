@@ -13,19 +13,13 @@ export function ProductCard({
   product: Product;
   priority?: boolean;
 }) {
-  const discount = product.retailPrice
-    ? Math.round(
-        ((product.retailPrice - product.price) / product.retailPrice) * 100
-      )
-    : 0;
-
   return (
     <Link
       href={`/product/${product.slug}`}
       className="group block focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-4 rounded-[2px]"
       aria-label={`${product.brand} ${product.name}, $${product.price.toLocaleString()}`}
     >
-      {/* Image island : warm ivory card on dark canvas */}
+      {/* Image island, warm ivory card on dark canvas */}
       <div className="relative aspect-[4/5] overflow-hidden bg-ivory-warm mb-4">
         <Image
           src={product.image}
@@ -50,7 +44,7 @@ export function ProductCard({
           )}
         </div>
 
-        {/* Wishlist : always visible on mobile, hover reveal on desktop */}
+        {/* Wishlist, always visible on mobile, hover reveal on desktop */}
         <button
           aria-label={`Add ${product.name} to wishlist`}
           onClick={(e) => {
@@ -61,7 +55,7 @@ export function ProductCard({
           <Heart className="h-4 w-4 text-charcoal" strokeWidth={1.5} aria-hidden="true" />
         </button>
 
-        {/* Hover quick-view (desktop only : hover doesn't exist on touch) */}
+        {/* Hover quick-view (desktop only, hover doesn't exist on touch) */}
         <div className="hidden md:block absolute inset-x-3 bottom-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
           <button
             onClick={(e) => e.preventDefault()}
@@ -71,7 +65,7 @@ export function ProductCard({
           </button>
         </div>
 
-        {/* Authenticated marker : hidden during hover so quick-view can take its place */}
+        {/* Authenticated marker, hidden during hover so quick-view can take its place */}
         {product.authenticated && (
           <div className="absolute bottom-3 left-3 flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] text-ivory bg-emerald/95 px-2 py-1 md:group-hover:opacity-0 transition-opacity">
             <ShieldCheck className="h-3 w-3" strokeWidth={2} aria-hidden="true" />
@@ -80,7 +74,7 @@ export function ProductCard({
         )}
       </div>
 
-      {/* Details : on dark canvas */}
+      {/* Details, on dark canvas */}
       <div className="space-y-1">
         <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-ivory/50">
           <span>{product.brand}</span>
@@ -89,20 +83,10 @@ export function ProductCard({
         <h3 className="text-sm text-ivory leading-tight pr-4 group-hover:text-brass transition-colors">
           {product.name}
         </h3>
-        <div className="flex items-baseline gap-2.5 pt-1">
+        <div className="pt-1">
           <span className="font-serif text-lg text-brass">
             ${product.price.toLocaleString()}
           </span>
-          {product.retailPrice && (
-            <>
-              <span className="text-xs text-ivory/40 line-through">
-                ${product.retailPrice.toLocaleString()}
-              </span>
-              <span className="text-[10px] uppercase tracking-wider text-ivory/55 font-medium">
-                Save {discount}%
-              </span>
-            </>
-          )}
         </div>
       </div>
     </Link>

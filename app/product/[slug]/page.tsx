@@ -59,12 +59,6 @@ export default function ProductPage() {
 
   if (!product) return notFound();
 
-  const discount = product.retailPrice
-    ? Math.round(
-        ((product.retailPrice - product.price) / product.retailPrice) * 100
-      )
-    : 0;
-
   // Mock gallery with the main image used multiple times for demo
   const gallery = [
     product.image,
@@ -193,18 +187,10 @@ export default function ProductPage() {
               </div>
 
               {/* Price */}
-              <div className="flex flex-wrap items-baseline gap-4 pt-2 pb-6 border-b border-ivory/10">
+              <div className="flex items-baseline gap-4 pt-2 pb-6 border-b border-ivory/10">
                 <span className="font-serif text-4xl text-brass">
                   ${product.price.toLocaleString()}
                 </span>
-                {product.retailPrice && (
-                  <>
-                    <span className="text-ivory/45 line-through text-sm">
-                      ${product.retailPrice.toLocaleString()} retail
-                    </span>
-                    <Badge variant="brass">Save {discount}%</Badge>
-                  </>
-                )}
               </div>
 
               {/* Condition story: the differentiator */}

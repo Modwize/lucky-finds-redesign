@@ -159,7 +159,6 @@ This prototype's `lib/products.ts` is the design's data contract. When wiring to
 | `lf.condition_score` | Integer (1 to 10) | Product card, PDP condition bar | Required. Drives the 10-bar visual rating. |
 | `lf.condition_label` | Single-line text | PDP | One of: "New with Tags", "Excellent", "Very Good", "Good" |
 | `lf.condition_note` | Multi-line text | PDP condition report | "Minor signs of careful use. Interior pristine..." |
-| `lf.retail_price` | Currency | Product card, PDP save badge | Original retail price for the strike-through and "Save X%" calc |
 | `lf.is_one_of_one` | Boolean | Badges, quantity input | Default `true` for all consignment. Disables qty increment beyond 1. |
 | `lf.authenticated` | Boolean | Card and PDP authentication marker | `true` for luxury pieces sent through AuthenticateFirst |
 | `lf.cert_number` | Single-line text | PDP accordion | AuthenticateFirst certificate number |
