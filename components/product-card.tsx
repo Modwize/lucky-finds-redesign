@@ -22,8 +22,10 @@ export function ProductCard({
   return (
     <Link
       href={`/product/${product.slug}`}
-      className="group block"
+      className="group block focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-4 rounded-[2px]"
+      aria-label={`${product.brand} ${product.name}, $${product.price.toLocaleString()}`}
     >
+      {/* Image island — warm ivory card on dark canvas */}
       <div className="relative aspect-[4/5] overflow-hidden bg-ivory-warm mb-4">
         <Image
           src={product.image}
@@ -48,19 +50,19 @@ export function ProductCard({
           )}
         </div>
 
-        {/* Wishlist */}
+        {/* Wishlist — always visible on mobile, hover reveal on desktop */}
         <button
-          aria-label="Add to wishlist"
+          aria-label={`Add ${product.name} to wishlist`}
           onClick={(e) => {
             e.preventDefault();
           }}
-          className="absolute top-3 right-3 h-9 w-9 bg-ivory/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-ivory"
+          className="absolute top-3 right-3 h-9 w-9 bg-ivory/95 backdrop-blur-sm flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-ivory focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-emerald"
         >
           <Heart className="h-4 w-4 text-charcoal" strokeWidth={1.5} />
         </button>
 
-        {/* Hover quick-view */}
-        <div className="absolute inset-x-3 bottom-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+        {/* Hover quick-view (desktop only — hover doesn't exist on touch) */}
+        <div className="hidden md:block absolute inset-x-3 bottom-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
           <button
             onClick={(e) => e.preventDefault()}
             className="w-full py-3 bg-ivory/95 backdrop-blur-sm text-charcoal text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-emerald hover:text-ivory transition-colors"
@@ -69,34 +71,34 @@ export function ProductCard({
           </button>
         </div>
 
-        {/* Authenticated marker */}
+        {/* Authenticated marker — hidden during hover so quick-view can take its place */}
         {product.authenticated && (
-          <div className="absolute bottom-3 left-3 flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] text-ivory bg-emerald/90 px-2 py-1 group-hover:opacity-0 transition-opacity">
-            <ShieldCheck className="h-3 w-3" strokeWidth={2} />
+          <div className="absolute bottom-3 left-3 flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] text-ivory bg-emerald/95 px-2 py-1 md:group-hover:opacity-0 transition-opacity">
+            <ShieldCheck className="h-3 w-3" strokeWidth={2} aria-hidden="true" />
             <span>Authenticated</span>
           </div>
         )}
       </div>
 
-      {/* Details */}
+      {/* Details — on dark canvas */}
       <div className="space-y-1">
-        <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-charcoal/60">
+        <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-ivory/50">
           <span>{product.brand}</span>
           <span>Cond. {product.conditionScore}/10</span>
         </div>
-        <h3 className="text-sm text-charcoal leading-tight pr-4 group-hover:text-emerald transition-colors">
+        <h3 className="text-sm text-ivory leading-tight pr-4 group-hover:text-brass transition-colors">
           {product.name}
         </h3>
         <div className="flex items-baseline gap-2.5 pt-1">
-          <span className="font-serif text-lg text-emerald">
+          <span className="font-serif text-lg text-brass">
             ${product.price.toLocaleString()}
           </span>
           {product.retailPrice && (
             <>
-              <span className="text-xs text-charcoal/40 line-through">
+              <span className="text-xs text-ivory/40 line-through">
                 ${product.retailPrice.toLocaleString()}
               </span>
-              <span className="text-[10px] uppercase tracking-wider text-brass-dark font-medium">
+              <span className="text-[10px] uppercase tracking-wider text-ivory/55 font-medium">
                 Save {discount}%
               </span>
             </>

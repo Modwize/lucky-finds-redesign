@@ -6,31 +6,55 @@
   :root {
     --font-cormorant: "Cormorant Garamond", Georgia, serif;
     --font-inter: "Inter", system-ui, sans-serif;
+    color-scheme: dark;
   }
 
   html {
     scroll-behavior: smooth;
+    background-color: #15291F;
   }
 
   body {
-    @apply bg-ivory text-charcoal font-sans antialiased;
+    @apply bg-emerald-deep text-ivory font-sans antialiased;
     font-feature-settings: "ss01", "cv11";
   }
 
   ::selection {
-    @apply bg-emerald text-ivory;
+    @apply bg-brass text-charcoal;
   }
 
-  /* Refined scrollbar */
+  /* Refined scrollbar — emerald track, brass thumb */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #EDE5D5;
+    background: #15291F;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1F3A2E;
+    background: #2D5240;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C9A961;
+  }
+
+  /* Visible focus ring across the site — brass on dark */
+  *:focus-visible {
+    outline: 2px solid #C9A961;
+    outline-offset: 3px;
+  }
+  /* Defer to component-level rings where defined */
+  [data-focus-managed]:focus-visible {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -44,19 +68,36 @@
   }
 
   .hairline {
-    @apply h-px bg-charcoal/15;
+    @apply h-px bg-ivory/15;
   }
 
+  /* Skip-to-content for keyboard users */
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-[200%] focus:translate-y-0 bg-brass text-charcoal px-4 py-3 text-xs uppercase tracking-[0.2em] font-medium transition-transform;
+  }
+
+  /* Primary CTA — champagne hardware on velvet */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald text-ivory text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-emerald-deep;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-brass text-charcoal text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:bg-brass-light focus-visible:outline-2 focus-visible:outline-ivory focus-visible:outline-offset-2;
   }
 
+  /* Outline CTA — ivory on dark */
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-emerald text-emerald text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-emerald hover:text-ivory;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-ivory/40 text-ivory text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:border-brass hover:text-brass focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-2;
   }
 
+  /* Ghost — text-only with chevron */
   .btn-ghost {
-    @apply inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] font-medium text-emerald hover:text-brass-dark transition-colors;
+    @apply inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] font-medium text-brass hover:text-brass-light transition-colors focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-4 rounded-[2px];
+  }
+
+  /* Ivory inverse buttons — used inside the rare ivory breathing-room sections */
+  .btn-on-ivory {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-deep text-ivory text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:bg-emerald focus-visible:outline-2 focus-visible:outline-emerald focus-visible:outline-offset-2;
+  }
+
+  .btn-outline-on-ivory {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-emerald/30 text-emerald text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:bg-emerald hover:text-ivory hover:border-emerald focus-visible:outline-2 focus-visible:outline-emerald focus-visible:outline-offset-2;
   }
 }
 

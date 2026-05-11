@@ -54,11 +54,15 @@ export function Footer() {
             </p>
           </div>
           <form className="flex flex-col sm:flex-row gap-3" action="#">
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="newsletter-email"
               type="email"
               required
               placeholder="Your email address"
-              className="flex-1 bg-transparent border-b border-ivory/30 px-2 py-4 text-ivory placeholder-ivory/40 focus:outline-none focus:border-brass transition-colors"
+              className="flex-1 bg-transparent border-b border-ivory/30 px-2 py-4 text-ivory placeholder-ivory/55 focus:outline-none focus:border-brass transition-colors"
             />
             <button
               type="submit"

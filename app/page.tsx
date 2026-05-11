@@ -46,27 +46,27 @@ export default function HomePage() {
       <Header />
 
       {/* ===== HERO ===== */}
-      <section className="relative bg-ivory overflow-hidden">
+      <section className="relative bg-emerald-deep overflow-hidden">
         <div className="container pt-12 lg:pt-20 pb-16 lg:pb-24">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left: editorial copy */}
             <div className="lg:col-span-5 space-y-8 animate-fade-in">
               <div className="flex items-center gap-3">
                 <div className="h-px w-12 bg-brass" />
-                <span className="eyebrow text-emerald">
+                <span className="eyebrow text-brass">
                   New In · This Week
                 </span>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[0.95] text-balance text-emerald">
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[0.95] text-balance text-ivory">
                 The thrill
                 <br />
-                of the <span className="italic">find</span>,
+                of the <span className="italic text-brass">find</span>,
                 <br />
-                <span className="text-charcoal/80">curated.</span>
+                <span className="text-ivory/70">curated.</span>
               </h1>
 
-              <p className="text-lg text-charcoal/70 leading-relaxed max-w-md text-pretty">
+              <p className="text-lg text-ivory/70 leading-relaxed max-w-md text-pretty">
                 Designer consignment with the standards of a flagship. Every
                 piece authenticated, every detail considered, every find
                 genuinely one-of-one.
@@ -75,30 +75,31 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link href="#new" className="btn-primary">
                   Shop New Arrivals
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link href="#consign" className="btn-ghost">
                   <span>Consign with us</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
 
               {/* Social proof */}
-              <div className="flex items-center gap-6 pt-6 border-t border-charcoal/10">
-                <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-6 pt-6 border-t border-ivory/10">
+                <div className="flex items-center gap-1.5" aria-label="5 out of 5 stars">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       className="h-4 w-4 fill-brass text-brass"
                       strokeWidth={0}
+                      aria-hidden="true"
                     />
                   ))}
                 </div>
                 <div className="text-sm">
-                  <span className="font-medium text-charcoal">
+                  <span className="font-medium text-ivory">
                     96% recommend
                   </span>
-                  <span className="text-charcoal/60 ml-2">
+                  <span className="text-ivory/55 ml-2">
                     · Trusted since 2011
                   </span>
                 </div>
@@ -117,11 +118,11 @@ export default function HomePage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 70vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-emerald/5" />
+                <div className="absolute inset-0 bg-emerald-deep/15" />
               </div>
 
               {/* Secondary inset image */}
-              <div className="absolute bottom-0 left-0 w-[45%] h-[55%] overflow-hidden border-[12px] border-ivory">
+              <div className="absolute bottom-0 left-0 w-[45%] h-[55%] overflow-hidden border-[12px] border-emerald-deep">
                 <Image
                   src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&q=80&auto=format&fit=crop"
                   alt="Featured shoes"
@@ -131,19 +132,19 @@ export default function HomePage() {
                 />
               </div>
 
-              {/* Editorial tag */}
-              <div className="absolute top-8 left-4 lg:left-8 bg-ivory px-5 py-4 max-w-[200px]">
+              {/* Editorial tag — ivory island floating on dark */}
+              <div className="absolute top-8 left-4 lg:left-8 bg-ivory px-5 py-4 max-w-[200px] shadow-2xl shadow-emerald-deep/40">
                 <div className="eyebrow text-brass-dark mb-1.5">
                   Editor&apos;s Find
                 </div>
-                <div className="font-serif text-base text-emerald leading-tight">
+                <div className="font-serif text-base text-emerald-deep leading-tight">
                   Chanel Classic Flap in caviar — just walked in.
                 </div>
               </div>
 
               {/* Authenticated pill */}
-              <div className="absolute bottom-6 right-6 bg-emerald text-ivory px-5 py-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em]">
-                <Sparkles className="h-3.5 w-3.5 text-brass" />
+              <div className="absolute bottom-6 right-6 bg-brass text-charcoal px-5 py-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em]">
+                <Sparkles className="h-3.5 w-3.5 text-emerald-deep" aria-hidden="true" />
                 <span>Authenticated</span>
               </div>
             </div>
@@ -151,15 +152,15 @@ export default function HomePage() {
         </div>
 
         {/* Bottom brand marquee */}
-        <div className="border-y border-charcoal/10 bg-ivory-warm/40 overflow-hidden">
-          <div className="flex animate-marquee whitespace-nowrap py-5">
+        <div className="border-y border-ivory/10 bg-emerald overflow-hidden">
+          <div className="flex animate-marquee whitespace-nowrap py-5" aria-hidden="true">
             {[...featuredBrands, ...featuredBrands].map((brand, i) => (
               <span
                 key={i}
-                className="font-serif text-xl md:text-2xl text-charcoal/50 mx-10"
+                className="font-serif text-xl md:text-2xl text-ivory/55 mx-10"
               >
                 {brand}
-                <span className="ml-10 text-brass/60">·</span>
+                <span className="ml-10 text-brass/70">·</span>
               </span>
             ))}
           </div>
@@ -170,20 +171,20 @@ export default function HomePage() {
       <section id="new" className="container py-20 lg:py-28">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 lg:mb-16">
           <div>
-            <div className="eyebrow text-brass-dark mb-3">
+            <div className="eyebrow text-brass mb-3">
               Fresh to the Floor
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-emerald leading-[1.05]">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05]">
               Just arrived this week.
             </h2>
-            <p className="text-charcoal/60 mt-4 max-w-lg">
+            <p className="text-ivory/65 mt-4 max-w-lg">
               New pieces land daily. Once they&apos;re gone, they&apos;re gone —
               every item is one-of-one.
             </p>
           </div>
           <Link href="#" className="btn-ghost group">
             <span>View all new in</span>
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
         </div>
 
@@ -200,8 +201,8 @@ export default function HomePage() {
       {/* ===== SHOP BY CATEGORY ===== */}
       <section className="container py-20 lg:py-28">
         <div className="text-center mb-14">
-          <div className="eyebrow text-brass-dark mb-3">Shop the Boutique</div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-emerald leading-[1.05] max-w-2xl mx-auto text-balance">
+          <div className="eyebrow text-brass mb-3">Shop the Boutique</div>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] max-w-2xl mx-auto text-balance">
             Browse by category.
           </h2>
         </div>
@@ -250,13 +251,13 @@ export default function HomePage() {
       </section>
 
       {/* ===== EDITORIAL STORY ===== */}
-      <section className="bg-ivory-warm py-20 lg:py-32">
+      <section className="bg-emerald py-20 lg:py-32">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] lg:aspect-[3/4]">
               <Image
                 src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&q=80&auto=format&fit=crop"
-                alt="Inside the boutique"
+                alt="Inside the Lucky Finds boutique in Rockville Centre"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -273,20 +274,20 @@ export default function HomePage() {
 
             <div className="space-y-8">
               <div>
-                <div className="eyebrow text-brass-dark mb-4">Our Story</div>
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-emerald leading-[1.05] mb-6">
+                <div className="eyebrow text-brass mb-4">Our Story</div>
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] mb-6">
                   A treasure hunt with{" "}
-                  <span className="italic">unbeatable</span> standards.
+                  <span className="italic text-brass">unbeatable</span> standards.
                 </h2>
               </div>
-              <p className="text-lg text-charcoal/70 leading-relaxed">
+              <p className="text-lg text-ivory/75 leading-relaxed">
                 Shannon McComb grew up scouring consignment shops with her
                 fashionista mother. Every Saturday was a hunt — and she always
                 felt &quot;lucky&quot; to &quot;find&quot; the pieces she did.
                 When her long career at Steve Madden ended, she took a leap of
                 faith and brought that thrill to Long Island.
               </p>
-              <p className="text-charcoal/70 leading-relaxed">
+              <p className="text-ivory/65 leading-relaxed">
                 Fifteen years later, Lucky Finds is the destination for
                 authenticated luxury on the South Shore — where uncompromising
                 intake standards meet the joy of discovering something genuinely
@@ -295,7 +296,7 @@ export default function HomePage() {
               <div className="pt-4">
                 <Link href="#about" className="btn-outline">
                   Read Our Story
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -307,10 +308,10 @@ export default function HomePage() {
       <section className="container py-20 lg:py-28">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 lg:mb-16">
           <div>
-            <div className="eyebrow text-brass-dark mb-3">
+            <div className="eyebrow text-brass mb-3">
               Curated by Shannon
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-emerald leading-[1.05]">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05]">
               This week&apos;s standouts.
             </h2>
           </div>
@@ -326,7 +327,7 @@ export default function HomePage() {
       {/* ===== CONSIGN CTA ===== */}
       <section
         id="consign"
-        className="relative bg-emerald-deep text-ivory py-20 lg:py-32 overflow-hidden"
+        className="relative bg-emerald text-ivory py-20 lg:py-32 overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <Image
@@ -393,38 +394,38 @@ export default function HomePage() {
       {/* ===== VISIT BLOCK ===== */}
       <section className="container py-20 lg:py-28">
         <div className="text-center max-w-2xl mx-auto">
-          <div className="eyebrow text-brass-dark mb-4">Visit the Boutique</div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-emerald leading-[1.05] mb-6">
+          <div className="eyebrow text-brass mb-4">Visit the Boutique</div>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] mb-6">
             Come hunt with us.
           </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-10">
+          <p className="text-ivory/70 leading-relaxed mb-10">
             New pieces arrive daily — and the best ones never make it to the
             website. Stop in, browse the racks, find something nobody else
             will have.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-12 pt-10 border-t border-charcoal/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-12 pt-10 border-t border-ivory/10">
             <div>
-              <div className="eyebrow text-brass-dark mb-3">Address</div>
-              <p className="text-charcoal leading-relaxed">
+              <div className="eyebrow text-brass mb-3">Address</div>
+              <p className="text-ivory leading-relaxed">
                 7A N. Park Ave
                 <br />
                 Rockville Centre, NY 11570
               </p>
             </div>
             <div>
-              <div className="eyebrow text-brass-dark mb-3">Hours</div>
-              <p className="text-charcoal leading-relaxed">
+              <div className="eyebrow text-brass mb-3">Hours</div>
+              <p className="text-ivory leading-relaxed">
                 Monday – Saturday
                 <br />
                 10:00 AM — 6:00 PM
                 <br />
-                <span className="text-charcoal/50">Sunday Closed</span>
+                <span className="text-ivory/45">Sunday Closed</span>
               </p>
             </div>
             <div>
-              <div className="eyebrow text-brass-dark mb-3">Contact</div>
-              <p className="text-charcoal leading-relaxed">
+              <div className="eyebrow text-brass mb-3">Contact</div>
+              <p className="text-ivory leading-relaxed">
                 (516) 442-4600
                 <br />
                 luckyfindsboutique

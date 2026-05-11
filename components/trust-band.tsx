@@ -47,13 +47,14 @@ export function TrustBand() {
           {guarantees.map((item) => (
             <div
               key={item.title}
-              className="bg-emerald p-8 lg:p-10 group hover:bg-emerald-muted transition-colors duration-500"
+              className="bg-emerald-elevated p-8 lg:p-10 group hover:bg-emerald-muted transition-colors duration-500"
             >
               <item.icon
                 className="h-8 w-8 text-brass mb-6"
                 strokeWidth={1.25}
+                aria-hidden="true"
               />
-              <h3 className="font-serif text-2xl font-light mb-3">
+              <h3 className="font-serif text-2xl font-light mb-3 text-ivory">
                 {item.title}
               </h3>
               <p className="text-ivory/65 text-sm leading-relaxed">
