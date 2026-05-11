@@ -414,85 +414,145 @@ export default function HomePage() {
                 payment by store credit or check.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-brass text-charcoal text-sm uppercase tracking-[0.2em] font-medium hover:bg-brass-light transition-colors"
-                >
+                <Link href="#" className="btn-primary">
                   Book an Appointment
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
-                <Link
-                  href="#"
-                  className="text-sm uppercase tracking-[0.2em] text-ivory hover:text-brass transition-colors flex items-center gap-2 px-2"
-                >
-                  How it works
-                  <ArrowRight className="h-4 w-4" />
+                <Link href="#" className="btn-ghost">
+                  <span>How it works</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5 grid grid-cols-2 gap-px bg-ivory/10">
+            <dl className="lg:col-span-5 grid grid-cols-2 gap-px bg-ivory/10">
               {[
-                { value: "50%", label: "On luxury pieces" },
-                { value: "60", label: "Day cycle" },
-                { value: "8+", label: "Items to open" },
-                { value: "15", label: "Years in business" },
+                {
+                  value: "50%",
+                  label: "Consignor split",
+                  note: "On luxury designer pieces",
+                },
+                {
+                  value: "60",
+                  unit: "days",
+                  label: "Consignment cycle",
+                  note: "Standard term per piece",
+                },
+                {
+                  value: "8",
+                  unit: "items",
+                  label: "Account minimum",
+                  note: "To open with us",
+                },
+                {
+                  value: "15",
+                  unit: "yrs",
+                  label: "On the South Shore",
+                  note: "Family-owned since 2011",
+                },
               ].map((stat) => (
-                <div key={stat.label} className="bg-emerald-deep p-8">
-                  <div className="font-serif text-5xl lg:text-6xl font-light text-brass leading-none mb-3">
+                <div key={stat.label} className="bg-emerald-deep p-7 lg:p-8">
+                  <dt className="font-serif text-5xl lg:text-6xl font-light text-brass leading-none mb-3 flex items-baseline gap-2">
                     {stat.value}
-                  </div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-ivory/60">
-                    {stat.label}
-                  </div>
+                    {stat.unit && (
+                      <span className="text-xs uppercase tracking-[0.2em] text-brass/65 font-sans">
+                        {stat.unit}
+                      </span>
+                    )}
+                  </dt>
+                  <dd>
+                    <div className="text-xs uppercase tracking-[0.2em] text-ivory mb-1">
+                      {stat.label}
+                    </div>
+                    <div className="text-[11px] text-ivory/50 leading-snug">
+                      {stat.note}
+                    </div>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
         </div>
       </section>
 
       {/* ===== VISIT BLOCK ===== */}
-      <section className="container py-20 lg:py-28">
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="eyebrow text-brass mb-4">Visit the Boutique</div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] mb-6">
-            Come hunt with us.
-          </h2>
-          <p className="text-ivory/70 leading-relaxed mb-10">
-            New pieces arrive daily — and the best ones never make it to the
-            website. Stop in, browse the racks, find something nobody else
-            will have.
-          </p>
+      <section
+        aria-labelledby="visit-heading"
+        className="container py-20 lg:py-28"
+      >
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Image — the shop, not a contact card */}
+          <div className="lg:col-span-6 relative aspect-[4/5] md:aspect-[5/4] lg:aspect-[4/5]">
+            <Image
+              src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200&q=80&auto=format&fit=crop"
+              alt="The Lucky Finds boutique floor, with merchandise on hanging racks"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+            {/* Inset hours plaque — anchors the photo as a real place */}
+            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-emerald-deep/95 backdrop-blur-sm px-5 py-4 max-w-[200px] border border-ivory/10">
+              <div className="eyebrow text-brass mb-1.5 text-[10px]">
+                Open Today
+              </div>
+              <div className="font-serif text-base text-ivory leading-tight">
+                10am — 6pm
+              </div>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-12 pt-10 border-t border-ivory/10">
-            <div>
-              <div className="eyebrow text-brass mb-3">Address</div>
-              <p className="text-ivory leading-relaxed">
-                7A N. Park Ave
-                <br />
-                Rockville Centre, NY 11570
-              </p>
-            </div>
-            <div>
-              <div className="eyebrow text-brass mb-3">Hours</div>
-              <p className="text-ivory leading-relaxed">
-                Monday – Saturday
-                <br />
-                10:00 AM — 6:00 PM
-                <br />
-                <span className="text-ivory/45">Sunday Closed</span>
-              </p>
-            </div>
-            <div>
-              <div className="eyebrow text-brass mb-3">Contact</div>
-              <p className="text-ivory leading-relaxed">
-                (516) 442-4600
-                <br />
-                luckyfindsboutique
-                <br />
-                @gmail.com
-              </p>
+          {/* Content */}
+          <div className="lg:col-span-6 space-y-7 lg:pl-6">
+            <div className="eyebrow text-brass">Visit the Boutique</div>
+            <h2
+              id="visit-heading"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-ivory leading-[1.05] text-balance"
+            >
+              Come hunt{" "}
+              <span className="italic text-brass">with us.</span>
+            </h2>
+            <p className="text-base md:text-lg text-ivory/70 leading-relaxed max-w-md text-pretty">
+              New pieces arrive daily, and the best ones often never reach the
+              website. Stop in, browse the racks, find something nobody else
+              will have.
+            </p>
+
+            <dl className="grid grid-cols-2 gap-6 pt-4 pb-2 border-t border-ivory/10">
+              <div>
+                <dt className="eyebrow text-brass mb-2">Address</dt>
+                <dd className="text-ivory text-sm leading-relaxed">
+                  7A N. Park Ave
+                  <br />
+                  Rockville Centre, NY
+                </dd>
+              </div>
+              <div>
+                <dt className="eyebrow text-brass mb-2">Hours</dt>
+                <dd className="text-ivory text-sm leading-relaxed">
+                  Mon — Sat · 10–6
+                  <br />
+                  <span className="text-ivory/45">Sun closed</span>
+                </dd>
+              </div>
+            </dl>
+
+            <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-2">
+              <Link
+                href="https://maps.google.com/?q=7A+N.+Park+Ave+Rockville+Centre+NY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Get Directions
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <a
+                href="tel:+15164424600"
+                className="btn-ghost"
+                aria-label="Call Lucky Finds at 5 1 6 4 4 2 4 6 0 0"
+              >
+                <span>(516) 442-4600</span>
+              </a>
             </div>
           </div>
         </div>
