@@ -23,7 +23,7 @@
     @apply bg-brass text-charcoal;
   }
 
-  /* Refined scrollbar — emerald track, brass thumb */
+  /* Refined scrollbar : emerald track, brass thumb */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -38,7 +38,7 @@
     background: #C9A961;
   }
 
-  /* Visible focus ring across the site — brass on dark */
+  /* Visible focus ring across the site : brass on dark */
   *:focus-visible {
     outline: 2px solid #C9A961;
     outline-offset: 3px;
@@ -76,22 +76,22 @@
     @apply absolute left-4 top-4 z-[100] -translate-y-[200%] focus:translate-y-0 bg-brass text-charcoal px-4 py-3 text-xs uppercase tracking-[0.2em] font-medium transition-transform;
   }
 
-  /* Primary CTA — champagne hardware on velvet */
+  /* Primary CTA : champagne hardware on velvet */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-brass text-charcoal text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:bg-brass-light focus-visible:outline-2 focus-visible:outline-ivory focus-visible:outline-offset-2;
   }
 
-  /* Outline CTA — ivory on dark */
+  /* Outline CTA : ivory on dark */
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-ivory/40 text-ivory text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:border-brass hover:text-brass focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-2;
   }
 
-  /* Ghost — text-only with chevron */
+  /* Ghost : text-only with chevron */
   .btn-ghost {
     @apply inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] font-medium text-brass hover:text-brass-light transition-colors focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-4 rounded-[2px];
   }
 
-  /* Ivory inverse buttons — used inside the rare ivory breathing-room sections */
+  /* Ivory inverse buttons : used inside the rare ivory breathing-room sections */
   .btn-on-ivory {
     @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-deep text-ivory text-sm uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:bg-emerald focus-visible:outline-2 focus-visible:outline-emerald focus-visible:outline-offset-2;
   }

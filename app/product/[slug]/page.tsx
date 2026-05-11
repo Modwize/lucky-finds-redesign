@@ -33,7 +33,7 @@ const accordionData = [
     title: "Condition Report",
     icon: Award,
     content:
-      "Excellent pre-loved condition (9/10). Minor signs of careful use — interior pristine, hardware shows light surface marks consistent with gentle wear. Exterior leather supple with no creasing, scratches, or staining. Original dust bag included. No box.",
+      "Excellent pre-loved condition (9/10). Minor signs of careful use. Interior pristine. Hardware shows light surface marks consistent with gentle wear. Exterior leather supple with no creasing, scratches, or staining. Original dust bag included. No box.",
   },
   {
     title: "Measurements & Materials",
@@ -45,7 +45,7 @@ const accordionData = [
     title: "Shipping & Returns",
     icon: Truck,
     content:
-      "Complimentary insured shipping on orders over $250. Same-day handling on orders placed before 2 PM EST. 7-day returns on full-price items (authentication issues excluded — those are always refundable). Local Long Island pickup available at the boutique.",
+      "Complimentary insured shipping on orders over $250. Same-day handling on orders placed before 2 PM EST. 7-day returns on full-price items (authentication issues excluded, those are always refundable). Local Long Island pickup available at the boutique.",
   },
 ];
 
@@ -125,7 +125,7 @@ export default function ProductPage() {
                   <Badge variant="brass">Just Arrived</Badge>
                 )}
                 {product.isOneOfOne && (
-                  <Badge variant="ivory">1 of 1 — One available</Badge>
+                  <Badge variant="ivory">1 of 1 · One available</Badge>
                 )}
               </div>
               <div className="absolute bottom-6 left-6 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-ivory bg-emerald-deep/95 backdrop-blur-sm px-4 py-2.5">
@@ -207,7 +207,7 @@ export default function ProductPage() {
                 )}
               </div>
 
-              {/* Condition story — the differentiator */}
+              {/* Condition story: the differentiator */}
               <div className="bg-emerald-elevated p-6 space-y-4 border border-ivory/8">
                 <div className="flex items-center justify-between">
                   <div className="eyebrow text-brass">
@@ -278,7 +278,7 @@ export default function ProductPage() {
                   Add to Bag · ${product.price.toLocaleString()}
                 </button>
 
-                {/* Layaway — visibly secondary to Add to Bag */}
+                {/* Layaway: visibly secondary to Add to Bag */}
                 <button className="w-full inline-flex items-center justify-center gap-2 py-4 text-sm uppercase tracking-[0.2em] font-medium text-ivory/85 hover:text-brass border border-ivory/20 hover:border-brass/60 transition-colors focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-2">
                   <CreditCard className="h-4 w-4" aria-hidden="true" />
                   Layaway · 4 payments of ${layawayMonthly.toLocaleString()}
@@ -383,7 +383,7 @@ export default function ProductPage() {
                 Shannon&apos;s 15 years of designer expertise. Our intake
                 inspection. Then AuthenticateFirst&apos;s independent third-party
                 verification. If anything is ever found inauthentic, you receive
-                a full refund — no questions, no exceptions.
+                a full refund. No questions, no exceptions.
               </p>
               <Link
                 href="#"

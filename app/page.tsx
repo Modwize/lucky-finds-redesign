@@ -121,7 +121,7 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
 
-                {/* Museum-placard caption — integrated, not floating */}
+                {/* Museum-placard caption: integrated, not floating */}
                 <figcaption className="absolute left-0 right-0 bottom-0 px-5 py-5 md:px-7 md:py-6 flex items-end justify-between gap-4">
                   <div className="max-w-[80%]">
                     <div className="flex items-center gap-2.5 mb-2">
@@ -131,7 +131,7 @@ export default function HomePage() {
                       </span>
                     </div>
                     <p className="font-serif text-lg md:text-xl text-ivory leading-snug text-balance">
-                      Chanel Classic Flap in caviar — just walked in.
+                      Chanel Classic Flap in caviar, just walked in.
                     </p>
                   </div>
                   <Link
@@ -148,7 +148,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== AUTHENTICATED HOUSES — static brand strip, no marquee ===== */}
+      {/* ===== AUTHENTICATED HOUSES (static brand strip, no marquee) ===== */}
       <section
         aria-label="Designer houses we authenticate"
         className="border-y border-ivory/10 bg-emerald-deep"
@@ -184,8 +184,8 @@ export default function HomePage() {
               Just arrived this week.
             </h2>
             <p className="text-ivory/65 mt-4 max-w-lg">
-              New pieces land daily. Once they&apos;re gone, they&apos;re gone —
-              every item is one-of-one.
+              New pieces land daily. Once they&apos;re gone, they&apos;re gone.
+              Every item is one-of-one.
             </p>
           </div>
           <Link href="#" className="btn-ghost group">
@@ -310,14 +310,14 @@ export default function HomePage() {
               </div>
               <p className="text-lg text-ivory/75 leading-relaxed">
                 Shannon McComb grew up scouring consignment shops with her
-                fashionista mother. Every Saturday was a hunt — and she always
+                fashionista mother. Every Saturday was a hunt, and she always
                 felt &quot;lucky&quot; to &quot;find&quot; the pieces she did.
                 When her long career at Steve Madden ended, she took a leap of
                 faith and brought that thrill to Long Island.
               </p>
               <p className="text-ivory/65 leading-relaxed">
                 Fifteen years later, Lucky Finds is the destination for
-                authenticated luxury on the South Shore — where uncompromising
+                authenticated luxury on the South Shore, where uncompromising
                 intake standards meet the joy of discovering something genuinely
                 rare.
               </p>
@@ -337,28 +337,26 @@ export default function HomePage() {
         aria-labelledby="shannon-heading"
         className="container py-20 lg:py-28"
       >
-        {/* Pull-quote — Shannon's voice as the section header */}
+        {/* Editorial intro: factual description, not a fabricated quote */}
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <div className="eyebrow text-brass mb-7">Curated by Shannon</div>
-          <blockquote>
-            <p className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-light italic text-ivory leading-[1.25] text-balance mb-9 text-pretty">
-              &ldquo;My mother taught me the best find isn&apos;t on the wall —
-              it&apos;s the one you almost missed. I built this for the women
-              who learned it the same way.&rdquo;
-            </p>
-            <footer className="flex flex-col items-center gap-3">
-              <span className="font-serif italic text-2xl md:text-3xl text-brass">
-                Shannon McComb
-              </span>
-              <span
-                className="h-px w-10 bg-brass/50"
-                aria-hidden="true"
-              />
-              <cite className="not-italic eyebrow text-ivory/55 text-[10px]">
-                Founder · Lucky Finds, Rockville Centre
-              </cite>
-            </footer>
-          </blockquote>
+          <p className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-light italic text-ivory leading-[1.25] text-balance mb-9 text-pretty">
+            Every piece on this rail is one-of-one.
+            Hand-selected at intake. Authenticated.
+            Condition-graded before it reached the floor.
+          </p>
+          <div className="flex flex-col items-center gap-3">
+            <span className="font-serif italic text-2xl md:text-3xl text-brass">
+              Shannon McComb
+            </span>
+            <span
+              className="h-px w-10 bg-brass/50"
+              aria-hidden="true"
+            />
+            <span className="not-italic eyebrow text-ivory/55 text-[10px]">
+              Founder, Lucky Finds Rockville Centre
+            </span>
+          </div>
         </div>
 
         {/* Grid header + link */}
@@ -409,9 +407,8 @@ export default function HomePage() {
                 <span className="italic text-brass">a fortune.</span>
               </h2>
               <p className="text-lg text-ivory/70 max-w-xl leading-relaxed">
-                We offer 50% on luxury designer pieces — the highest split on
-                Long Island. By-appointment intake, transparent process,
-                payment by store credit or check.
+                We offer 50% on luxury designer pieces. By-appointment intake,
+                transparent process, payment by store credit or check.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <Link href="#" className="btn-primary">
@@ -448,7 +445,7 @@ export default function HomePage() {
                   value: "15",
                   unit: "yrs",
                   label: "On the South Shore",
-                  note: "Family-owned since 2011",
+                  note: "Owner-operated since 2011",
                 },
               ].map((stat) => (
                 <div key={stat.label} className="bg-emerald-deep p-7 lg:p-8">
@@ -481,7 +478,7 @@ export default function HomePage() {
         className="container py-20 lg:py-28"
       >
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Image — the shop, not a contact card */}
+          {/* Image: the shop, not a contact card */}
           <div className="lg:col-span-6 relative aspect-[4/5] md:aspect-[5/4] lg:aspect-[4/5]">
             <Image
               src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200&q=80&auto=format&fit=crop"
@@ -490,13 +487,13 @@ export default function HomePage() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
-            {/* Inset hours plaque — anchors the photo as a real place */}
+            {/* Inset hours plaque: anchors the photo as a real place */}
             <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-emerald-deep/95 backdrop-blur-sm px-5 py-4 max-w-[200px] border border-ivory/10">
               <div className="eyebrow text-brass mb-1.5 text-[10px]">
                 Open Today
               </div>
               <div className="font-serif text-base text-ivory leading-tight">
-                10am — 6pm
+                10am to 6pm
               </div>
             </div>
           </div>
@@ -529,7 +526,7 @@ export default function HomePage() {
               <div>
                 <dt className="eyebrow text-brass mb-2">Hours</dt>
                 <dd className="text-ivory text-sm leading-relaxed">
-                  Mon — Sat · 10–6
+                  Mon to Sat, 10 to 6
                   <br />
                   <span className="text-ivory/45">Sun closed</span>
                 </dd>

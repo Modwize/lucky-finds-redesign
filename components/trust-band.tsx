@@ -39,7 +39,7 @@ export function TrustBand() {
           <p className="text-ivory/70 text-lg leading-relaxed max-w-2xl mx-auto text-pretty">
             Every luxury handbag, every pair of red soles, every piece of fine
             jewelry that crosses our threshold is independently authenticated
-            before it ever reaches our floor — or yours.
+            before it ever reaches our floor, or yours.
           </p>
         </div>
 

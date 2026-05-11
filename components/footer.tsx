@@ -141,7 +141,7 @@ export function Footer() {
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/60 tracking-wider">
           <div className="flex items-center gap-6">
             <span className="uppercase tracking-[0.2em]">Mon – Sat</span>
-            <span>10:00 AM — 6:00 PM</span>
+            <span>10:00 AM to 6:00 PM</span>
             <span className="hidden md:inline">·</span>
             <span className="hidden md:inline uppercase tracking-[0.2em]">
               Sun Closed

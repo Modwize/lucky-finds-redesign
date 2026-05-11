@@ -15,7 +15,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Lucky Finds brand palette — dark by default
+        // Lucky Finds brand palette : dark by default
         emerald: {
           DEFAULT: "#1F3A2E",
           deep: "#15291F",       // canvas

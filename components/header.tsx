@@ -128,7 +128,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* Category nav — desktop only */}
+        {/* Category nav : desktop only */}
         <nav
           aria-label="Categories"
           className="hidden lg:flex items-center justify-center gap-10 pb-5 -mt-1"
@@ -146,7 +146,7 @@ export function Header() {
         </nav>
       </div>
 
-      {/* Mobile menu — full-screen panel */}
+      {/* Mobile menu : full-screen panel */}
       {menuOpen && (
         <div
           id="mobile-menu"

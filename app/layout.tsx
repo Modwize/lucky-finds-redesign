@@ -19,7 +19,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Lucky Finds Boutique — Authenticated Luxury Consignment",
+  title: "Lucky Finds Boutique: Authenticated Luxury Consignment",
   description:
     "Pre-loved Chanel, Louis Vuitton, Hermès and more. Every piece authenticated by AuthenticateFirst. Rockville Centre, NY since 2011.",
   authors: [{ name: "Lucky Finds Boutique" }],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "pre-owned designer",
   ],
   openGraph: {
-    title: "Lucky Finds Boutique — Authenticated Luxury Consignment",
+    title: "Lucky Finds Boutique: Authenticated Luxury Consignment",
     description:
       "Designer consignment with the standards of a flagship. Every piece authenticated. Every find one-of-one.",
     type: "website",
