@@ -25,12 +25,6 @@ import { getProduct, products } from "@/lib/products";
 
 const accordionData = [
   {
-    title: "Authentication Certificate",
-    icon: ShieldCheck,
-    content:
-      "This piece has been independently authenticated by AuthenticateFirst, a third-party luxury authentication house. Certificate of authenticity ships with your order. Backed by our 100% money-back authenticity guarantee.",
-  },
-  {
     title: "Condition Report",
     icon: Award,
     content:
@@ -193,6 +187,41 @@ export default function ProductPage() {
                   ${product.price.toLocaleString()}
                 </span>
               </div>
+
+              {/* Certificate of Authenticity: trust signal as a document, not a marketing claim */}
+              {product.authenticated && (
+                <div className="relative bg-emerald-elevated border border-brass/30 p-5 md:p-6">
+                  {/* Brass corner accents make it read as a document */}
+                  <span className="absolute top-0 left-0 w-3 h-3 border-t border-l border-brass" aria-hidden="true" />
+                  <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-brass" aria-hidden="true" />
+                  <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-brass" aria-hidden="true" />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-brass" aria-hidden="true" />
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-full border border-brass/50">
+                      <ShieldCheck
+                        className="h-5 w-5 text-brass"
+                        strokeWidth={1.25}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[10px] uppercase tracking-[0.3em] text-brass mb-1.5">
+                        Certificate of Authenticity
+                      </div>
+                      <div className="font-mono text-xs md:text-sm text-ivory tracking-wider mb-3">
+                        No. AF · 2026 · {product.id.padStart(4, "0")}
+                      </div>
+                      <p className="text-xs text-ivory/65 leading-relaxed">
+                        Verified by{" "}
+                        <span className="text-ivory">AuthenticateFirst</span>,
+                        an independent third-party luxury authentication service.
+                        Numbered certificate ships physically with your order.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Condition story: the differentiator */}
               <div className="bg-emerald-elevated p-6 space-y-4 border border-ivory/8">

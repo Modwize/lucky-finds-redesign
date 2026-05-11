@@ -4,7 +4,7 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Authenticated",
-    body: "Every luxury piece verified by AuthenticateFirst, an independent third-party house.",
+    body: "Every luxury piece verified by AuthenticateFirst, an independent third-party authentication service.",
   },
   {
     icon: Award,
@@ -50,7 +50,7 @@ export function TrustBand() {
           {pillars.map((item) => (
             <li
               key={item.title}
-              className="bg-emerald-elevated px-5 py-5 md:px-6 md:py-6 flex gap-4 items-start group hover:bg-emerald-muted transition-colors duration-500"
+              className="bg-emerald-elevated px-5 py-5 md:px-6 md:py-6 flex gap-4 items-start"
             >
               <item.icon
                 className="h-5 w-5 text-brass flex-shrink-0 mt-0.5"
@@ -69,14 +69,28 @@ export function TrustBand() {
           ))}
         </ul>
 
-        {/* Authentication partner strip, condensed */}
-        <div className="mt-10 lg:mt-12 pt-6 border-t border-ivory/15 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
-            Authentication Partner
-          </span>
-          <span className="font-serif text-xl tracking-[0.2em] text-ivory/80">
-            AuthenticateFirst<span className="text-brass">.</span>
-          </span>
+        {/* Verification stamp: explains what AuthenticateFirst is for unfamiliar visitors */}
+        <div className="mt-12 lg:mt-16 pt-10 border-t border-ivory/15">
+          <div className="max-w-md mx-auto text-center">
+            <div className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-brass/40 mb-5">
+              <ShieldCheck
+                className="h-5 w-5 text-brass"
+                strokeWidth={1.25}
+                aria-hidden="true"
+              />
+            </div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-ivory/55 mb-2">
+              Verified Externally By
+            </div>
+            <div className="font-serif text-2xl md:text-[28px] tracking-[0.15em] text-ivory mb-3">
+              AuthenticateFirst
+            </div>
+            <p className="text-xs md:text-sm text-ivory/55 leading-relaxed max-w-sm mx-auto">
+              An independent third-party luxury authentication service.
+              Every luxury piece on the floor is verified before it&apos;s ever
+              listed.
+            </p>
+          </div>
         </div>
       </div>
     </section>
