@@ -48,7 +48,7 @@ export function Header() {
       <div className="bg-emerald text-ivory text-[10px] md:text-xs tracking-[0.25em] uppercase border-b border-ivory/5">
         <div className="container flex items-center justify-center py-2.5 gap-4 md:gap-8">
           <span className="hidden md:inline text-ivory/60">
-            Complimentary shipping over $250
+            Visit us · 7A N. Park Ave, Rockville Centre
           </span>
           <span className="font-medium text-ivory">
             <span className="hidden sm:inline">Every piece authenticated by </span>

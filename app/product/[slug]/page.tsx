@@ -17,6 +17,7 @@ import {
   Minus,
   Plus,
   Sparkles,
+  MapPin,
 } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
 import { Badge } from "@/components/ui/badge";
@@ -269,6 +270,24 @@ export default function ProductPage() {
                   <CreditCard className="h-4 w-4" aria-hidden="true" />
                   Layaway · 4 payments of ${layawayMonthly.toLocaleString()}
                 </button>
+
+                {/* Boutique alternative: a real third path that competitors can't offer */}
+                <Link
+                  href="/#visit"
+                  className="flex items-start gap-2.5 pt-2 text-xs text-ivory/60 hover:text-brass transition-colors group"
+                >
+                  <MapPin
+                    className="h-3.5 w-3.5 text-brass mt-0.5 flex-shrink-0"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                  <span className="leading-snug">
+                    Or see it in person at the boutique.{" "}
+                    <span className="text-ivory/80 group-hover:text-brass underline-offset-4 group-hover:underline">
+                      7A N. Park Ave, Rockville Centre
+                    </span>
+                  </span>
+                </Link>
               </div>
 
               {/* Quick benefits */}
@@ -419,8 +438,8 @@ export default function ProductPage() {
       </section>
 
       {/* You may also love */}
-      <section className="container py-20 lg:py-28">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
+      <section className="container py-14 lg:py-20">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="eyebrow text-brass mb-3">
               Curated For You

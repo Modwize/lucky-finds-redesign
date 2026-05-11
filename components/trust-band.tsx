@@ -1,77 +1,82 @@
-import { ShieldCheck, Award, Lock, RefreshCw } from "lucide-react";
+import { ShieldCheck, Award, MapPin, CreditCard } from "lucide-react";
 
-const guarantees = [
+const pillars = [
   {
     icon: ShieldCheck,
     title: "Authenticated",
-    body: "Every luxury piece verified by AuthenticateFirst, an independent third-party authentication house.",
+    body: "Every luxury piece verified by AuthenticateFirst, an independent third-party house.",
   },
   {
     icon: Award,
     title: "100% Guarantee",
-    body: "If a piece is ever found inauthentic, you receive a full refund. No questions, no exceptions.",
+    body: "If a piece is ever found inauthentic, you receive a full refund. No exceptions.",
   },
   {
-    icon: Lock,
-    title: "Inspection",
-    body: "Uncompromising intake standards. We curate ruthlessly so you find the rare, not the routine.",
+    icon: MapPin,
+    title: "Visit in Person",
+    body: "7A N. Park Ave, Rockville Centre. Walk in, try it on, take it home the same day.",
   },
   {
-    icon: RefreshCw,
+    icon: CreditCard,
     title: "Layaway Available",
-    body: "Found something special that needs a little time? Reserve it with our flexible layaway plan.",
+    body: "Reserve a piece with a flexible payment plan. Ask in store or by phone.",
   },
 ];
 
 export function TrustBand() {
   return (
-    <section className="bg-emerald text-ivory py-20 lg:py-28">
+    <section
+      aria-labelledby="trust-heading"
+      className="bg-emerald text-ivory py-14 lg:py-20"
+    >
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="eyebrow text-brass mb-5">
+        {/* Tight header */}
+        <div className="max-w-3xl mx-auto text-center mb-10 lg:mb-14">
+          <div className="eyebrow text-brass mb-4">
             The Lucky Finds Promise
           </div>
-          <h2 className="font-serif text-4xl lg:text-5xl xl:text-6xl font-light leading-[1.05] text-balance mb-6">
+          <h2
+            id="trust-heading"
+            className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.1] text-balance text-ivory"
+          >
             Buy with the confidence of a flagship.
-            <br />
-            <span className="italic text-brass">Hunt with the joy of a find.</span>
+            <br className="hidden sm:block" />
+            <span className="italic text-brass"> Hunt with the joy of a find.</span>
           </h2>
-          <p className="text-ivory/70 text-lg leading-relaxed max-w-2xl mx-auto text-pretty">
-            Every luxury handbag, every pair of red soles, every piece of fine
-            jewelry that crosses our threshold is independently authenticated
-            before it ever reaches our floor, or yours.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ivory/10">
-          {guarantees.map((item) => (
-            <div
+        {/* Compact pillars: icon inline with title, body wraps under */}
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-ivory/10">
+          {pillars.map((item) => (
+            <li
               key={item.title}
-              className="bg-emerald-elevated p-8 lg:p-10 group hover:bg-emerald-muted transition-colors duration-500"
+              className="bg-emerald-elevated px-5 py-5 md:px-6 md:py-6 flex gap-4 items-start group hover:bg-emerald-muted transition-colors duration-500"
             >
               <item.icon
-                className="h-8 w-8 text-brass mb-6"
-                strokeWidth={1.25}
+                className="h-5 w-5 text-brass flex-shrink-0 mt-0.5"
+                strokeWidth={1.5}
                 aria-hidden="true"
               />
-              <h3 className="font-serif text-2xl font-light mb-3 text-ivory">
-                {item.title}
-              </h3>
-              <p className="text-ivory/65 text-sm leading-relaxed">
-                {item.body}
-              </p>
-            </div>
+              <div className="min-w-0">
+                <h3 className="font-serif text-lg md:text-xl font-light text-ivory leading-tight mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-ivory/65 text-sm leading-snug">
+                  {item.body}
+                </p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        {/* Authenticated by strip */}
-        <div className="mt-16 pt-10 border-t border-ivory/15 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-          <div className="text-xs uppercase tracking-[0.3em] text-ivory/50">
+        {/* Authentication partner strip, condensed */}
+        <div className="mt-10 lg:mt-12 pt-6 border-t border-ivory/15 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
             Authentication Partner
-          </div>
-          <div className="font-serif text-2xl tracking-[0.2em] text-ivory/80">
+          </span>
+          <span className="font-serif text-xl tracking-[0.2em] text-ivory/80">
             AuthenticateFirst<span className="text-brass">.</span>
-          </div>
+          </span>
         </div>
       </div>
     </section>

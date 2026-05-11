@@ -174,8 +174,8 @@ export default function HomePage() {
       </section>
 
       {/* ===== JUST ARRIVED ===== */}
-      <section id="new" className="container py-20 lg:py-28">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 lg:mb-16">
+      <section id="new" className="container py-14 lg:py-20">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
             <div className="eyebrow text-brass mb-3">
               Fresh to the Floor
@@ -207,9 +207,9 @@ export default function HomePage() {
       {/* ===== SHOP BY CATEGORY ===== */}
       <section
         aria-labelledby="categories-heading"
-        className="container py-20 lg:py-28"
+        className="container py-14 lg:py-20"
       >
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 lg:mb-14">
           <div className="max-w-xl">
             <div className="eyebrow text-brass mb-3">Shop the Boutique</div>
             <h2
@@ -279,7 +279,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== EDITORIAL STORY ===== */}
-      <section className="bg-emerald py-20 lg:py-32">
+      <section className="bg-emerald py-16 lg:py-24">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] lg:aspect-[3/4]">
@@ -335,10 +335,10 @@ export default function HomePage() {
       {/* ===== CURATED BY SHANNON ===== */}
       <section
         aria-labelledby="shannon-heading"
-        className="container py-20 lg:py-28"
+        className="container py-14 lg:py-20"
       >
         {/* Editorial intro: factual description, not a fabricated quote */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-14">
           <div className="eyebrow text-brass mb-7">Curated by Shannon</div>
           <p className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-light italic text-ivory leading-[1.25] text-balance mb-9 text-pretty">
             Every piece on this rail is one-of-one.
@@ -386,7 +386,7 @@ export default function HomePage() {
       {/* ===== CONSIGN CTA ===== */}
       <section
         id="consign"
-        className="relative bg-emerald text-ivory py-20 lg:py-32 overflow-hidden"
+        className="relative bg-emerald text-ivory py-16 lg:py-24 overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <Image
@@ -474,8 +474,9 @@ export default function HomePage() {
 
       {/* ===== VISIT BLOCK ===== */}
       <section
+        id="visit"
         aria-labelledby="visit-heading"
-        className="container py-20 lg:py-28"
+        className="container py-14 lg:py-20 scroll-mt-32"
       >
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Image: the shop, not a contact card */}
