@@ -18,8 +18,6 @@ import {
   Plus,
   Sparkles,
 } from "lucide-react";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { ProductCard } from "@/components/product-card";
 import { Badge } from "@/components/ui/badge";
 import { getProduct, products } from "@/lib/products";
@@ -81,8 +79,6 @@ export default function ProductPage() {
 
   return (
     <>
-      <Header />
-
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="border-b border-ivory/10 bg-emerald">
         <ol className="container py-4 flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-ivory/60 overflow-x-auto">
@@ -176,16 +172,16 @@ export default function ProductPage() {
                   >
                     {product.brand}
                   </Link>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <button
                       aria-label="Add to wishlist"
-                      className="h-9 w-9 border border-ivory/20 flex items-center justify-center text-ivory hover:border-brass hover:text-brass transition-colors"
+                      className="h-11 w-11 border border-ivory/20 flex items-center justify-center text-ivory hover:border-brass hover:text-brass transition-colors"
                     >
                       <Heart className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     </button>
                     <button
                       aria-label="Share this product"
-                      className="h-9 w-9 border border-ivory/20 flex items-center justify-center text-ivory hover:border-brass hover:text-brass transition-colors"
+                      className="h-11 w-11 border border-ivory/20 flex items-center justify-center text-ivory hover:border-brass hover:text-brass transition-colors"
                     >
                       <Share2 className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     </button>
@@ -459,8 +455,6 @@ export default function ProductPage() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

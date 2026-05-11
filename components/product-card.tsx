@@ -56,9 +56,9 @@ export function ProductCard({
           onClick={(e) => {
             e.preventDefault();
           }}
-          className="absolute top-3 right-3 h-9 w-9 bg-ivory/95 backdrop-blur-sm flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-ivory focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-emerald"
+          className="absolute top-3 right-3 h-11 w-11 bg-ivory/95 backdrop-blur-sm flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-ivory focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-emerald-deep"
         >
-          <Heart className="h-4 w-4 text-charcoal" strokeWidth={1.5} />
+          <Heart className="h-4 w-4 text-charcoal" strokeWidth={1.5} aria-hidden="true" />
         </button>
 
         {/* Hover quick-view (desktop only — hover doesn't exist on touch) */}

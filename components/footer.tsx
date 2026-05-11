@@ -119,13 +119,13 @@ export function Footer() {
 
         {footerColumns.map((col) => (
           <div key={col.title}>
-            <h4 className="eyebrow text-brass mb-5">{col.title}</h4>
+            <h3 className="eyebrow text-brass mb-5">{col.title}</h3>
             <ul className="space-y-3">
               {col.links.map((link) => (
                 <li key={link}>
                   <Link
                     href="#"
-                    className="text-sm text-ivory/70 hover:text-ivory transition-colors"
+                    className="text-sm text-ivory/70 hover:text-ivory transition-colors focus-visible:outline-2 focus-visible:outline-brass focus-visible:outline-offset-2 rounded-[2px]"
                   >
                     {link}
                   </Link>

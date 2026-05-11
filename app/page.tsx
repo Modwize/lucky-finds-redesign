@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Star } from "lucide-react";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { TrustBand } from "@/components/trust-band";
 import { ProductCard } from "@/components/product-card";
 import { products, featuredBrands } from "@/lib/products";
@@ -45,8 +43,6 @@ const categories = [
 export default function HomePage() {
   return (
     <>
-      <Header />
-
       {/* ===== HERO ===== */}
       <section className="relative bg-emerald-deep overflow-hidden">
         <div className="container pt-10 md:pt-14 lg:pt-20 pb-14 lg:pb-24">
@@ -501,8 +497,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
